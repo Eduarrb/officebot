@@ -1,0 +1,81 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ie-box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 10px;
+}
+
+body {
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  min-height: 100vh;
+  width: 100%;
+  height: auto;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  font-family: inherit;
+  font-size: inherit;
+  display: inline-block;
+  color: inherit;
+}
+
+img,
+video,
+iframe,
+picture,
+figure {
+  max-width: 100%;
+  display: block;
+}
+
+form,
+input,
+select,
+textarea,
+button,
+label {
+  font-family: inherit;
+  font-size: inherit;
+  display: block;
+  color: inherit;
+}
+
+.message {
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px 0;
+  line-height: 1.4;
+}
+
+.user-message {
+  background-color: #007bff;
+  color: white;
+  text-align: right;
+  margin-left: 20%;
+}
+
+.bot-message {
+  background-color: #e9ecef;
+  text-align: left;
+  margin-right: 20%;
+}
+
+/*# sourceMappingURL=estilos.css.map */

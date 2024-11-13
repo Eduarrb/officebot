@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <h1 class="text-center">Chat with A.I</h1>
+            <div id="chatbox" class="border p-3 mb-4" style="height: 400px; overflow-y: auto">
+                <!-- Messages will be appended here -->
+            </div>
+            <div class="input-group">
+                <input id="inputbox" type="text" class="form-control" placeholder="Esriba su consulta..." />
+                <div class="input-group-append">
+                    <button class="btn btn-primary" onclick="sendMessage()">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let previousMessage = "";
+
+    async function sendMessage() {
+        const inputBox = document.querySelector("#inputbox");
+
+        const message = inputBox.value;
+
+        appendMessage(message, "user");
+
+        inputBox.value = "";
+
+        try {
+            const response = await axios.post("http://localhost:3000/message", {
+                prompt: message,
+                previousMessage,
+            });
+            appendMessage(response.data.message, "bot");
+            previousMessage = response.data.message;
+        } catch (error) {
+            console.error(error);
+            appendMessage("Ocurrio un error durante la peticion", "bot");
+        }
+    }
+
+    function appendMessage(message, sender) {
+        const chatbox = document.querySelector("#chatbox");
+
+        const msgElement = document.createElement("p");
+
+        msgElement.classList.add('message', sender === "user" ? "user-message" : "bot-message");
+
+        msgElement.innerText = message;
+
+        chatbox.appendChild(msgElement);
+
+        chatbox.scrollTop = chatbox.scrollHeight;
+    }
+</script>
