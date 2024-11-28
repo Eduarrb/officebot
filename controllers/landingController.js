@@ -1,6 +1,6 @@
 const index = (req, res) => {
     res.render('landing/index', {
-        title: 'prueba'
+        title: 'OfficeBot'
     })
 }
 

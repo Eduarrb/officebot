@@ -1,20 +1,57 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 offset-md-2">
-            <h1 class="text-center">Chat with A.I</h1>
-            <div id="chatbox" class="border p-3 mb-4" style="height: 400px; overflow-y: auto">
+<main class="bot">
+    <div class="bot__aside">
+        <h1 class="bot__aside__title">OfficeBot</h1>
+        <div class="bot__aside__consultasBox">
+            <h2 class="bot__aside__consultasBox__title">Consultas</h2>
+            <ul class="bot__aside__consultasBox__box">
+                <li class="bot__aside__consultasBox__box__list">
+                    <a href="" class="bot__aside__consultasBox__box__list--link">Consulta 01</a>
+                </li>
+                <li class="bot__aside__consultasBox__box__list">
+                    <a href="" class="bot__aside__consultasBox__box__list--link">Consulta 01</a>
+                </li>
+                <li class="bot__aside__consultasBox__box__list">
+                    <a href="" class="bot__aside__consultasBox__box__list--link">Consulta 01</a>
+                </li>
+                <li class="bot__aside__consultasBox__box__list">
+                    <a href="" class="bot__aside__consultasBox__box__list--link">Consulta 01</a>
+                </li>
+                <li class="bot__aside__consultasBox__box__list">
+                    <a href="" class="bot__aside__consultasBox__box__list--link">Consulta 01</a>
+                </li>
+                <li class="bot__aside__consultasBox__box__list">
+                    <a href="" class="bot__aside__consultasBox__box__list--link">Consulta 01</a>
+                </li>
+                <li class="bot__aside__consultasBox__box__list">
+                    <a href="" class="bot__aside__consultasBox__box__list--link">Consulta 01</a>
+                </li>
+                <li class="bot__aside__consultasBox__box__list">
+                    <a href="" class="bot__aside__consultasBox__box__list--link">Consulta 01</a>
+                </li>
+                <li class="bot__aside__consultasBox__box__list">
+                    <a href="" class="bot__aside__consultasBox__box__list--link">Consulta 01</a>
+                </li>
+                <li class="bot__aside__consultasBox__box__list">
+                    <a href="" class="bot__aside__consultasBox__box__list--link">Consulta 01</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="bot__right">
+        <div class="bot__right__box">
+            <!-- <h1 class="text-center">Chat with A.I</h1> -->
+            <div id="chatbox" class="bot__right__box__chat border p-3 mb-4">
                 <!-- Messages will be appended here -->
             </div>
             <div class="input-group">
                 <input id="inputbox" type="text" class="form-control" placeholder="Esriba su consulta..." />
                 <div class="input-group-append">
-                    <button class="btn btn-primary" onclick="sendMessage()">Enviar</button>
+                    <button class="btn btn-secundario" onclick="sendMessage()">Enviar</button>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
+</main>
 <script>
     let previousMessage = "";
 

@@ -60,7 +60,8 @@ label {
 
 :root {
   --color-principal: #010417;
-  --color-principal-light: #040c4a;
+  --color-principal-light: #070d3d;
+  --color-principal-superlight: #0e133f;
   --color-secundario-light: #00C66C;
   --color-secundario: #006438;
 }
@@ -69,7 +70,8 @@ label {
   margin-bottom: 3rem;
 }
 .form-group input[type=text],
-.form-group input[type=email] {
+.form-group input[type=email],
+.form-group input[type=password] {
   width: 100%;
   font-family: "Roboto", sans-serif;
   font-size: 1.4rem;
@@ -117,16 +119,19 @@ label {
 }
 
 .user-message {
-  background-color: #007bff;
   color: white;
   text-align: right;
   margin-left: 20%;
+  font-size: 1.4rem;
+  font-family: "Roboto", sans-serif;
 }
 
 .bot-message {
   background-color: #e9ecef;
   text-align: left;
   margin-right: 20%;
+  font-size: 1.5rem;
+  font-family: "Kode Mono", monospace;
 }
 
 .register {
@@ -182,6 +187,78 @@ label {
   top: 3rem;
   left: 3rem;
   z-index: 1;
+}
+
+.bot {
+  height: 100vh;
+  display: flex;
+}
+.bot__aside {
+  width: 20%;
+  background-color: var(--color-principal);
+  padding: 5rem 2rem;
+}
+.bot__aside__title {
+  font-family: "Kode Mono", monospace;
+  color: var(--color-secundario-light);
+}
+.bot__aside__consultasBox {
+  margin-top: 3rem;
+}
+.bot__aside__consultasBox__title {
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
+.bot__aside__consultasBox__box {
+  overflow-y: auto;
+  padding-left: 2rem;
+  margin-top: 3rem;
+}
+.bot__aside__consultasBox__box__list:not(:last-child) {
+  margin-bottom: 3rem;
+}
+.bot__aside__consultasBox__box__list--link {
+  color: white;
+  font-family: "Kode Mono", monospace;
+  font-size: 1.6rem;
+}
+.bot__right {
+  width: 80%;
+  background-color: var(--color-principal-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bot__right__box {
+  width: 60%;
+}
+.bot__right__box__chat {
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  width: 100%;
+  background-color: var(--color-principal-superlight);
+  border-radius: 3rem;
+  padding: 1rem;
+  overflow-y: auto;
+  height: 60vh;
+}
+.bot__right__box .input-group {
+  margin-top: 1rem;
+  width: 100%;
+}
+.bot__right__box .input-group #inputbox {
+  width: 100%;
+  border: none;
+  padding: 1rem;
+  font-size: 1.6rem;
+  background: var(--color-principal-superlight);
+  border-radius: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: "Roboto", sans-serif;
+}
+.bot__right__box .input-group .input-group-append {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: end;
 }
 
 /*# sourceMappingURL=estilos.css.map */
