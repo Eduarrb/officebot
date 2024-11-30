@@ -23,14 +23,14 @@ app.use(express.json());
 app.use(cors());
 // app.use(bodyParser.json());
 app.use(cookieParser());
-app.use(
-    session({
-        secret: process.env.SECRETO,
-        key: process.env.KEY,
-        resave: false,
-        saveUninitialized: false,
-    })
-);
+// app.use(
+//     session({
+//         secret: process.env.SECRETO,
+//         key: process.env.KEY,
+//         resave: false,
+//         saveUninitialized: false,
+//     })
+// );
 app.use(csurf({ cookie: true }));
 
 

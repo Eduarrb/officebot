@@ -43,19 +43,26 @@
             <div id="chatbox" class="bot__right__box__chat border p-3 mb-4">
                 <!-- Messages will be appended here -->
             </div>
-            <div class="input-group">
-                <input id="inputbox" type="text" class="form-control" placeholder="Esriba su consulta..." />
-                <div class="input-group-append">
-                    <button class="btn btn-secundario" onclick="sendMessage()">Enviar</button>
+            <form class="form-chat" method="post">
+                <input type="hidden" name="_csrf" value=<%- csrfToken %> class="csrf"/>
+                <div class="input-group">
+                    <input id="inputbox" type="text" class="form-control" placeholder="Esriba su consulta..." />
+                    <div class="input-group-append">
+                        <button class="btn btn-secundario" onclick="sendMessage()">Enviar</button>
+                    </div>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 </main>
 <script>
     let previousMessage = "";
 
-    async function sendMessage() {
+    const formChat = document.querySelector('.form-chat');
+    const token = document.querySelector('.csrf');
+
+    formChat.addEventListener('submit', async e => {
+        e.preventDefault();
         const inputBox = document.querySelector("#inputbox");
 
         const message = inputBox.value;
@@ -65,7 +72,7 @@
         inputBox.value = "";
 
         try {
-            const response = await axios.post("http://localhost:3000/message", {
+            const response = await axios.post(`http://localhost:3000/message?_csrf=${token.value}`, {
                 prompt: message,
                 previousMessage,
             });
@@ -75,7 +82,8 @@
             console.error(error);
             appendMessage("Ocurrio un error durante la peticion", "bot");
         }
-    }
+    })
+
 
     function appendMessage(message, sender) {
         const chatbox = document.querySelector("#chatbox");

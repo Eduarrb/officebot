@@ -5,11 +5,7 @@ import bcrypt from 'bcrypt';
 const Usuarios = db.define(
     'usuarios',
     {
-        nombres: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        apellidos: {
+        username: {
             type: DataTypes.STRING,
             allowNull: false,
         },
