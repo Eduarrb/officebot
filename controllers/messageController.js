@@ -1,3 +1,4 @@
+import { Consultas, Respuestas } from "../models/index.js";
 import openai from "openai";
 
 const openAIAPI = new openai(process.env.OPENAI_API_KEY);
@@ -23,6 +24,16 @@ const postMessage = async (req, res) => {
          
             messages: messages
         });
+        const promptInsertado = await Consultas.create({
+            usuarioId: req.usuario.id,
+            consulta: prompt
+        })
+
+        await Respuestas.create({
+            usuarioId: req.usuario.id,
+            consultaId: promptInsertado.id,
+            respuesta: aiResponse.choices[0].message.content
+        })
 
         res.json({
             message: aiResponse.choices[0].message.content,

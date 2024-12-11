@@ -4,7 +4,15 @@
         <div class="bot__aside__consultasBox">
             <h2 class="bot__aside__consultasBox__title">Consultas</h2>
             <ul class="bot__aside__consultasBox__box">
-                <li class="bot__aside__consultasBox__box__list">
+                <% if(consultasRespuestas.length) { %>
+                    <%- //JSON.stringify(consultasRespuestas, undefined, 2) %>
+                    <% consultasRespuestas.forEach(obj => { %>
+                        <li class="bot__aside__consultasBox__box__list">
+                            <a href="" class="bot__aside__consultasBox__box__list--link"><%- obj.consulta.consulta %></a>
+                        </li>
+                    <% }) %>
+                <% } %>
+                <!-- <li class="bot__aside__consultasBox__box__list">
                     <a href="" class="bot__aside__consultasBox__box__list--link">Consulta 01</a>
                 </li>
                 <li class="bot__aside__consultasBox__box__list">
@@ -30,18 +38,30 @@
                 </li>
                 <li class="bot__aside__consultasBox__box__list">
                     <a href="" class="bot__aside__consultasBox__box__list--link">Consulta 01</a>
-                </li>
-                <li class="bot__aside__consultasBox__box__list">
-                    <a href="" class="bot__aside__consultasBox__box__list--link">Consulta 01</a>
-                </li>
+                </li> -->
             </ul>
         </div>
     </div>
     <div class="bot__right">
+        <div class="bot__right__top">
+            <div class="bot__right__top__user">
+                <i class="fa-solid fa-user"></i> <span>Usuario01</span>
+            </div>
+            <div class="bot__right__top__logout">
+                <a href="/auth/logout">logout</a>
+            </div>
+        </div>
         <div class="bot__right__box">
-            <!-- <h1 class="text-center">Chat with A.I</h1> -->
+            
             <div id="chatbox" class="bot__right__box__chat border p-3 mb-4">
                 <!-- Messages will be appended here -->
+                <% if(consultasRespuestas.length) { %>
+                    <%- //JSON.stringify(consultasRespuestas, undefined, 2) %>
+                    <% consultasRespuestas.forEach(obj => { %>
+                        <p class="user-message message"><%- obj.consulta.consulta %></p>
+                        <p class="bot-message message"><%- obj.respuesta %></p>
+                    <% }) %>
+                <% } %>
             </div>
             <form class="form-chat" method="post">
                 <input type="hidden" name="_csrf" value=<%- csrfToken %> class="csrf"/>
@@ -52,6 +72,9 @@
                     </div>
                 </div>
             </form>
+            <div class="campoPruebas">
+                
+            </div>
         </div>
     </div>
 </main>
@@ -60,6 +83,9 @@
 
     const formChat = document.querySelector('.form-chat');
     const token = document.querySelector('.csrf');
+    const chatbox = document.querySelector("#chatbox");
+    chatbox.scrollTop = chatbox.scrollHeight;
+
 
     formChat.addEventListener('submit', async e => {
         e.preventDefault();

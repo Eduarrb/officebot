@@ -7,7 +7,7 @@ const db = new Sequelize(
     process.env.DB_USER,
     process.env.DB_PASS ?? '',
     {
-        // timezone : "-05:00",
+        timezone : "-05:00",
         host: process.env.DB_HOST,
         port: 3306,
         dialect: 'mysql',

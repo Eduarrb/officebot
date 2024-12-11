@@ -7,17 +7,23 @@ const Respuestas = db.define('respuestas', {
         type: DataTypes.INTEGER(11),
         allowNull: false
     },
+    consultaId: {
+        type: DataTypes.INTEGER(11),
+        allowNull: false
+    },
     respuesta: {
         type: DataTypes.TEXT,
         allowNull: false
     },
     fechaRespuesta: {
         type: DataTypes.DATE,
-        allowNull: false
+        allowNull: false,
+        defaultValue: DataTypes.NOW
     },
     horaRespuesta: {
         type: DataTypes.TIME,
-        allowNull: false
+        allowNull: false,
+        defaultValue: DataTypes.NOW
     }
 });
 

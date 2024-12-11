@@ -72,4 +72,8 @@ const autenticar = async (req, res) => {
 
 }
 
-export { formLogin, autenticar};
+const logout = (req, res) => {
+    res.clearCookie('_token').redirect('/');
+}
+
+export { formLogin, autenticar, logout};

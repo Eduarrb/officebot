@@ -81,12 +81,6 @@ label {
   border-radius: 1rem;
   outline: 0;
 }
-.form-group__error {
-  font-size: 1.6rem;
-  color: #e74c3c;
-  text-align: right;
-  font-family: "Roboto", sans-serif;
-}
 
 .btn {
   border: none;
@@ -115,166 +109,6 @@ label {
 .btn-secundario:hover {
   background-color: var(--color-secundario);
   transition: all 0.3s;
-}
-
-.pt-1 {
-  padding-top: 1rem;
-}
-
-.pt-2 {
-  padding-top: 2rem;
-}
-
-.pt-3 {
-  padding-top: 3rem;
-}
-
-.pt-4 {
-  padding-top: 4rem;
-}
-
-.pt-5 {
-  padding-top: 5rem;
-}
-
-.pt-6 {
-  padding-top: 6rem;
-}
-
-.pt-7 {
-  padding-top: 7rem;
-}
-
-.pt-8 {
-  padding-top: 8rem;
-}
-
-.pt-9 {
-  padding-top: 9rem;
-}
-
-.pt-10 {
-  padding-top: 10rem;
-}
-
-.pb-1 {
-  padding-bottom: 1rem;
-}
-
-.pb-2 {
-  padding-bottom: 2rem;
-}
-
-.pb-3 {
-  padding-bottom: 3rem;
-}
-
-.pb-4 {
-  padding-bottom: 4rem;
-}
-
-.pb-5 {
-  padding-bottom: 5rem;
-}
-
-.pb-6 {
-  padding-bottom: 6rem;
-}
-
-.pb-7 {
-  padding-bottom: 7rem;
-}
-
-.pb-8 {
-  padding-bottom: 8rem;
-}
-
-.pb-9 {
-  padding-bottom: 9rem;
-}
-
-.pb-10 {
-  padding-bottom: 10rem;
-}
-
-.pl-1 {
-  padding-left: 1rem;
-}
-
-.pl-2 {
-  padding-left: 2rem;
-}
-
-.pl-3 {
-  padding-left: 3rem;
-}
-
-.pl-4 {
-  padding-left: 4rem;
-}
-
-.pl-5 {
-  padding-left: 5rem;
-}
-
-.pl-6 {
-  padding-left: 6rem;
-}
-
-.pl-7 {
-  padding-left: 7rem;
-}
-
-.pl-8 {
-  padding-left: 8rem;
-}
-
-.pl-9 {
-  padding-left: 9rem;
-}
-
-.pl-10 {
-  padding-left: 10rem;
-}
-
-.pr-1 {
-  padding-right: 1rem;
-}
-
-.pr-2 {
-  padding-right: 2rem;
-}
-
-.pr-3 {
-  padding-right: 3rem;
-}
-
-.pr-4 {
-  padding-right: 4rem;
-}
-
-.pr-5 {
-  padding-right: 5rem;
-}
-
-.pr-6 {
-  padding-right: 6rem;
-}
-
-.pr-7 {
-  padding-right: 7rem;
-}
-
-.pr-8 {
-  padding-right: 8rem;
-}
-
-.pr-9 {
-  padding-right: 9rem;
-}
-
-.pr-10 {
-  padding-right: 10rem;
 }
 
 .message {
@@ -308,6 +142,7 @@ label {
 }
 .register__box {
   width: 60%;
+  height: 50%;
   display: flex;
   border: 2px solid var(--color-principal);
   border-radius: 3rem;
@@ -391,11 +226,43 @@ label {
   width: 80%;
   background-color: var(--color-principal-light);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
+  overflow-y: auto;
+}
+.bot__right__top {
+  width: 100%;
+  padding: 2rem 10rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.bot__right__top__user {
+  font-size: 1.6rem;
+  font-family: "Kode Mono", monospace;
+  color: white;
+}
+.bot__right__top__logout {
+  margin-left: 2rem;
+}
+.bot__right__top__logout a {
+  padding: 1rem 4rem;
+  font-size: 1.6rem;
+  background-color: white;
+  font-family: "Roboto", sans-serif;
+  border-radius: 1rem;
+}
+.bot__right__top__logout a:hover {
+  background-color: var(--color-secundario-light);
+  transition: all 0.5s;
 }
 .bot__right__box {
   width: 60%;
+}
+.bot__right__box .campoPruebas {
+  background-color: white;
+  font-size: 1.6rem;
 }
 .bot__right__box__chat {
   border: 1px solid rgba(255, 255, 255, 0.8);

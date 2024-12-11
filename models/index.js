@@ -12,6 +12,12 @@ Respuestas.belongsTo(Usuarios, {
     foreignKey: 'usuarioId',
     onDelete: 'RESTRICT',
     onUpdate: 'CASCADE'
+});
+
+Respuestas.belongsTo(Consultas,{
+    foreignKey: 'consultaId',
+    onDelete: 'RESTRICT',
+    onUpdate: 'CASCADE'
 })
 
 export {

@@ -54,5 +54,6 @@ app.use('/', messageRoute);
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
+    process.env.TZ = 'Etc/Universal'
     console.log(`EL app esta corriendo en el puerto ${PORT}`);
 });

@@ -13,11 +13,13 @@ const Consultas = db.define('consultas', {
     },
     fechaConsulta: {
         type: DataTypes.DATE,
-        allowNull: false
+        allowNull: false,
+        defaultValue: DataTypes.NOW
     },
     horaConsulta: {
         type: DataTypes.TIME,
-        allowNull: false
+        allowNull: false,
+        defaultValue: DataTypes.NOW
     }
 });
 
